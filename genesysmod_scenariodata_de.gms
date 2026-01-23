@@ -331,7 +331,7 @@ AvailabilityFactor(r,'R_Coal_Hardcoal',y)$(YearVal(y) > 2020) = 0;
 *##### Baseyearproduction & capacity for DE_Nord & DE_Baltic (Werte aus der Excel)
 
 RegionalBaseYearProduction('DE_Nord','RES_Wind_Offshore_Deep','Power','2018') = 55;
-RegionalBaseYearProduction('DE_Nord_1','RES_Wind_Offshore_Deep','Power','2018') = 55;
+RegionalBaseYearProduction('DE_Nord_1','RES_Wind_Offshore_Deep','Power','2018') = 0;
 RegionalBaseYearProduction('DE_Baltic','RES_Wind_Offshore_Deep','Power','2018') = 13;
 RegionalBaseYearProduction('DE_MV','RES_Wind_Offshore_Transitional','Power','2018') = 0;
 RegionalBaseYearProduction('DE_NI','RES_Wind_Offshore_Transitional','Power','2018') = 0;
@@ -348,11 +348,12 @@ ResidualCapacity('DE_Nord','RES_Wind_Offshore_Deep','2020') = 6.6980;
 ResidualCapacity('DE_Nord','RES_Wind_Offshore_Deep','2025') = 6.6980;
 ResidualCapacity('DE_Nord','RES_Wind_Offshore_Deep','2030') = 6.2930;
 ResidualCapacity('DE_Nord','RES_Wind_Offshore_Deep','2035') = 4.6538;
-ResidualCapacity('DE_Nord_1','RES_Wind_Offshore_Deep','2018') = 5.3060;
-ResidualCapacity('DE_Nord_1','RES_Wind_Offshore_Deep','2020') = 6.6980;
-ResidualCapacity('DE_Nord_1','RES_Wind_Offshore_Deep','2025') = 6.6980;
-ResidualCapacity('DE_Nord_1','RES_Wind_Offshore_Deep','2030') = 6.2930;
-ResidualCapacity('DE_Nord_1','RES_Wind_Offshore_Deep','2035') = 4.6538;
+
+ResidualCapacity('DE_Nord_1','RES_Wind_Offshore_Deep','2018') = 0;
+ResidualCapacity('DE_Nord_1','RES_Wind_Offshore_Deep','2020') = 0;
+ResidualCapacity('DE_Nord_1','RES_Wind_Offshore_Deep','2025') = 0;
+ResidualCapacity('DE_Nord_1','RES_Wind_Offshore_Deep','2030') = 0;
+ResidualCapacity('DE_Nord_1','RES_Wind_Offshore_Deep','2035') = 0;
 
 ResidualCapacity('DE_Baltic','RES_Wind_Offshore_Deep','2018') = 1.0760;
 ResidualCapacity('DE_Baltic','RES_Wind_Offshore_Deep','2020') = 1.0720;
