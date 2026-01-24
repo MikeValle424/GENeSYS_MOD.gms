@@ -22,7 +22,7 @@ $onuelxref
 scalar starttime;
 starttime = jnow;
 
-$if not set data_file                    $setglobal data_file input_Germany_H2_v24_nim_16_09_2024
+$if not set data_file                    $setglobal data_file input_Germany_H2_v25_nim_16_09_2024
 $if not set hourly_data_file             $setglobal hourly_data_file input_timeseries_DE_v04_nim_18-06-2024
 $if not set elmod_nthhour                $setglobal elmod_nthhour 964
 $if not set elmod_starthour              $setglobal elmod_starthour 8
