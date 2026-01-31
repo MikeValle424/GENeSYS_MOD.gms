@@ -41,6 +41,7 @@ TagTradeMonoDirectional('DE_Nord_17') = 1;
 TagTradeMonoDirectional('DE_Nord_18') = 1;
 TagTradeMonoDirectional('DE_Nord_19') = 1;
 TagTradeMonoDirectional('DE_Baltic') = 1;
+TagTradeMonoDirectional('DE_Baltic_1') = 1;
 
 Import.fx(y,l,f,'DE_Nord_1',rr) = 0;
 Import.fx(y,l,f,'DE_Nord_2',rr) = 0;
@@ -62,6 +63,7 @@ Import.fx(y,l,f,'DE_Nord_17',rr) = 0;
 Import.fx(y,l,f,'DE_Nord_18',rr) = 0;
 Import.fx(y,l,f,'DE_Nord_19',rr) = 0;
 Import.fx(y,l,f,'DE_Baltic',rr) = 0;
+Import.fx(y,l,f,'DE_Baltic_1',rr) = 0;
 
 
 $if not set h2_pricetarget $setglobal h2_pricetarget 1.82
@@ -160,11 +162,14 @@ AvailabilityFactor('DE_Nord_17',t,y) = 0;
 AvailabilityFactor('DE_Nord_18',t,y) = 0;
 AvailabilityFactor('DE_Nord_19',t,y) = 0;
 AvailabilityFactor('DE_Baltic',t,y) = 0;
+AvailabilityFactor('DE_Baltic_1',t,y) = 0;
 
 
 AvailabilityFactor('DE_Baltic','RES_Wind_Offshore_Deep',y) = 1;
+AvailabilityFactor('DE_Baltic_1','RES_Wind_Offshore_Deep',y) = 1;
 
 AvailabilityFactor('DE_Baltic','D_Battery_Li-Ion',y) = 1;
+AvailabilityFactor('DE_Baltic_1','D_Battery_Li-Ion',y) = 1;
 AvailabilityFactor('DE_Nord_1','RES_Wind_Offshore_Deep',y) = 1;
 AvailabilityFactor('DE_Nord_2','RES_Wind_Offshore_Deep',y) = 1;
 AvailabilityFactor('DE_Nord_3','RES_Wind_Offshore_Deep',y) = 1;
@@ -208,6 +213,9 @@ AvailabilityFactor('DE_Nord_19','D_Battery_Li-Ion',y) = 1;
 AvailabilityFactor('DE_Baltic','X_Alkaline_Electrolysis',y) = 1;
 AvailabilityFactor('DE_Baltic','X_PEM_Electrolysis',y) = 1;
 AvailabilityFactor('DE_Baltic','X_SOEC_Electrolysis',y) = 1;
+AvailabilityFactor('DE_Baltic_1','X_Alkaline_Electrolysis',y) = 1;
+AvailabilityFactor('DE_Baltic_1','X_PEM_Electrolysis',y) = 1;
+AvailabilityFactor('DE_Baltic_1','X_SOEC_Electrolysis',y) = 1;
 AvailabilityFactor('DE_Nord_1','X_Alkaline_Electrolysis',y) = 1;
 AvailabilityFactor('DE_Nord_1','X_PEM_Electrolysis',y) = 1;
 AvailabilityFactor('DE_Nord_1','X_SOEC_Electrolysis',y) = 1;
@@ -288,6 +296,7 @@ NewTradeCapacity.fx(y, 'Power', 'DE_Nord_17', rr) = 0;
 NewTradeCapacity.fx(y, 'Power', 'DE_Nord_18', rr) = 0;
 NewTradeCapacity.fx(y, 'Power', 'DE_Nord_19', rr) = 0;
 NewTradeCapacity.fx(y, 'Power', 'DE_Baltic', rr) = 0;
+NewTradeCapacity.fx(y, 'Power', 'DE_Baltic_1', rr) = 0;
 $endif
 
 ReserveMargin('DE_Nord_1',y) = 0;
@@ -310,6 +319,7 @@ ReserveMargin('DE_Nord_17',y) = 0;
 ReserveMargin('DE_Nord_18',y) = 0;
 ReserveMargin('DE_Nord_19',y) = 0;
 ReserveMargin('DE_Baltic',y) = 0;
+ReserveMargin('DE_Baltic_1',y) = 0;
 
 *fix for suboptimality
 ReserveMargin(r,y) = 0;
@@ -475,10 +485,12 @@ offshore_hub_sea('DE_Nord_17') = yes;
 offshore_hub_sea('DE_Nord_18') = yes;
 offshore_hub_sea('DE_Nord_19') = yes;
 offshore_hub_sea('DE_Baltic') = yes;
+offshore_hub_sea('DE_Baltic_1') = yes;
 
 set offshore_baltic(r_full);
 offshore_baltic(r_full) = no;
 offshore_baltic('DE_Baltic') = yes;
+offshore_baltic('DE_Baltic_1') = yes;
 offshore_baltic('DE_MV') = yes;
 offshore_baltic('DE_SH') = yes;
 
@@ -562,6 +574,7 @@ RegionalBaseYearProduction('DE_Nord_17','RES_Wind_Offshore_Deep','Power','2018')
 RegionalBaseYearProduction('DE_Nord_18','RES_Wind_Offshore_Deep','Power','2018') = 0;
 RegionalBaseYearProduction('DE_Nord_19','RES_Wind_Offshore_Deep','Power','2018') = 0;
 RegionalBaseYearProduction('DE_Baltic','RES_Wind_Offshore_Deep','Power','2018') = 13;
+RegionalBaseYearProduction('DE_Baltic_1','RES_Wind_Offshore_Deep','Power','2018') = 0;
 RegionalBaseYearProduction('DE_MV','RES_Wind_Offshore_Transitional','Power','2018') = 0;
 RegionalBaseYearProduction('DE_NI','RES_Wind_Offshore_Transitional','Power','2018') = 0;
 RegionalBaseYearProduction('DE_SH','RES_Wind_Offshore_Transitional','Power','2018') = 0;
@@ -691,6 +704,12 @@ ResidualCapacity('DE_Baltic','RES_Wind_Offshore_Deep','2020') = 1.0720;
 ResidualCapacity('DE_Baltic','RES_Wind_Offshore_Deep','2025') = 1.0675;
 ResidualCapacity('DE_Baltic','RES_Wind_Offshore_Deep','2030') = 1.0650;
 ResidualCapacity('DE_Baltic','RES_Wind_Offshore_Deep','2035') = 1.0167;
+
+ResidualCapacity('DE_Baltic_1','RES_Wind_Offshore_Deep','2018') = 0;
+ResidualCapacity('DE_Baltic_1','RES_Wind_Offshore_Deep','2020') = 0;
+ResidualCapacity('DE_Baltic_1','RES_Wind_Offshore_Deep','2025') = 0;
+ResidualCapacity('DE_Baltic_1','RES_Wind_Offshore_Deep','2030') = 0;
+ResidualCapacity('DE_Baltic_1','RES_Wind_Offshore_Deep','2035') = 0;
 *
 *
 parameter Renovierungsrate;
