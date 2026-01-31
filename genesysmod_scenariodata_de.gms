@@ -21,7 +21,6 @@
 
 parameter TagTradeMonoDirectional(REGION_FULL);
 TagTradeMonoDirectional(r) = 0;
-TagTradeMonoDirectional('DE_Nord') = 1;
 TagTradeMonoDirectional('DE_Nord_1') = 1;
 TagTradeMonoDirectional('DE_Nord_2') = 1;
 TagTradeMonoDirectional('DE_Nord_3') = 1;
@@ -43,7 +42,6 @@ TagTradeMonoDirectional('DE_Nord_18') = 1;
 TagTradeMonoDirectional('DE_Nord_19') = 1;
 TagTradeMonoDirectional('DE_Baltic') = 1;
 
-Import.fx(y,l,f,'DE_Nord',rr) = 0;
 Import.fx(y,l,f,'DE_Nord_1',rr) = 0;
 Import.fx(y,l,f,'DE_Nord_2',rr) = 0;
 Import.fx(y,l,f,'DE_Nord_3',rr) = 0;
@@ -142,7 +140,6 @@ VariableCost(r,t,m,y)$(not VariableCost(r,t,m,y)) = 0.01;
 TotalTechnologyAnnualActivityUpperLimit(r,'P_Nuclear',y)$(YearVal(y) >= 2025) = 0;
 
 
-AvailabilityFactor('DE_Nord',t,y) = 0;
 AvailabilityFactor('DE_Nord_1',t,y) = 0;
 AvailabilityFactor('DE_Nord_2',t,y) = 0;
 AvailabilityFactor('DE_Nord_3',t,y) = 0;
@@ -168,7 +165,6 @@ AvailabilityFactor('DE_Baltic',t,y) = 0;
 AvailabilityFactor('DE_Baltic','RES_Wind_Offshore_Deep',y) = 1;
 
 AvailabilityFactor('DE_Baltic','D_Battery_Li-Ion',y) = 1;
-AvailabilityFactor('DE_Nord','RES_Wind_Offshore_Deep',y) = 1;
 AvailabilityFactor('DE_Nord_1','RES_Wind_Offshore_Deep',y) = 1;
 AvailabilityFactor('DE_Nord_2','RES_Wind_Offshore_Deep',y) = 1;
 AvailabilityFactor('DE_Nord_3','RES_Wind_Offshore_Deep',y) = 1;
@@ -189,7 +185,6 @@ AvailabilityFactor('DE_Nord_17','RES_Wind_Offshore_Deep',y) = 1;
 AvailabilityFactor('DE_Nord_18','RES_Wind_Offshore_Deep',y) = 1;
 AvailabilityFactor('DE_Nord_19','RES_Wind_Offshore_Deep',y) = 1;
 
-AvailabilityFactor('DE_Nord','D_Battery_Li-Ion',y) = 1;
 AvailabilityFactor('DE_Nord_1','D_Battery_Li-Ion',y) = 1;
 AvailabilityFactor('DE_Nord_2','D_Battery_Li-Ion',y) = 1;
 AvailabilityFactor('DE_Nord_3','D_Battery_Li-Ion',y) = 1;
@@ -213,9 +208,6 @@ AvailabilityFactor('DE_Nord_19','D_Battery_Li-Ion',y) = 1;
 AvailabilityFactor('DE_Baltic','X_Alkaline_Electrolysis',y) = 1;
 AvailabilityFactor('DE_Baltic','X_PEM_Electrolysis',y) = 1;
 AvailabilityFactor('DE_Baltic','X_SOEC_Electrolysis',y) = 1;
-AvailabilityFactor('DE_Nord','X_Alkaline_Electrolysis',y) = 1;
-AvailabilityFactor('DE_Nord','X_PEM_Electrolysis',y) = 1;
-AvailabilityFactor('DE_Nord','X_SOEC_Electrolysis',y) = 1;
 AvailabilityFactor('DE_Nord_1','X_Alkaline_Electrolysis',y) = 1;
 AvailabilityFactor('DE_Nord_1','X_PEM_Electrolysis',y) = 1;
 AvailabilityFactor('DE_Nord_1','X_SOEC_Electrolysis',y) = 1;
@@ -276,7 +268,6 @@ AvailabilityFactor('DE_Nord_19','X_SOEC_Electrolysis',y) = 1;
 
 
 $ifthen %switch_central_h2% == 1
-NewTradeCapacity.fx(y, 'Power', 'DE_Nord', rr) = 0;
 NewTradeCapacity.fx(y, 'Power', 'DE_Nord_1', rr) = 0;
 NewTradeCapacity.fx(y, 'Power', 'DE_Nord_2', rr) = 0;
 NewTradeCapacity.fx(y, 'Power', 'DE_Nord_3', rr) = 0;
@@ -299,7 +290,6 @@ NewTradeCapacity.fx(y, 'Power', 'DE_Nord_19', rr) = 0;
 NewTradeCapacity.fx(y, 'Power', 'DE_Baltic', rr) = 0;
 $endif
 
-ReserveMargin('DE_Nord',y) = 0;
 ReserveMargin('DE_Nord_1',y) = 0;
 ReserveMargin('DE_Nord_2',y) = 0;
 ReserveMargin('DE_Nord_3',y) = 0;
@@ -439,7 +429,6 @@ $ifthen %switch_FEP% == 1
 *###### FlÃ¤chentwicklungsplan implementation #######
 set offshore_nordic(r_full);
 offshore_nordic(r_full) = no;
-offshore_nordic('DE_Nord') = yes;
 offshore_nordic('DE_Nord_1') = yes;
 offshore_nordic('DE_Nord_2') = yes;
 offshore_nordic('DE_Nord_3') = yes;
@@ -461,6 +450,31 @@ offshore_nordic('DE_Nord_18') = yes;
 offshore_nordic('DE_Nord_19') = yes;
 offshore_nordic('DE_NI') = yes;
 offshore_nordic('DE_SH') = yes;
+
+* Set of sea-based offshore hubs (excluded from symmetric transmission constraint in TrC6)
+* DE_Nord_1..19 and DE_Baltic: only export to land, no symmetric capacity required
+set offshore_hub_sea(r_full);
+offshore_hub_sea(r_full) = no;
+offshore_hub_sea('DE_Nord_1') = yes;
+offshore_hub_sea('DE_Nord_2') = yes;
+offshore_hub_sea('DE_Nord_3') = yes;
+offshore_hub_sea('DE_Nord_4') = yes;
+offshore_hub_sea('DE_Nord_5') = yes;
+offshore_hub_sea('DE_Nord_6') = yes;
+offshore_hub_sea('DE_Nord_7') = yes;
+offshore_hub_sea('DE_Nord_8') = yes;
+offshore_hub_sea('DE_Nord_9') = yes;
+offshore_hub_sea('DE_Nord_10') = yes;
+offshore_hub_sea('DE_Nord_11') = yes;
+offshore_hub_sea('DE_Nord_12') = yes;
+offshore_hub_sea('DE_Nord_13') = yes;
+offshore_hub_sea('DE_Nord_14') = yes;
+offshore_hub_sea('DE_Nord_15') = yes;
+offshore_hub_sea('DE_Nord_16') = yes;
+offshore_hub_sea('DE_Nord_17') = yes;
+offshore_hub_sea('DE_Nord_18') = yes;
+offshore_hub_sea('DE_Nord_19') = yes;
+offshore_hub_sea('DE_Baltic') = yes;
 
 set offshore_baltic(r_full);
 offshore_baltic(r_full) = no;
@@ -528,7 +542,6 @@ AvailabilityFactor(r,'R_Coal_Hardcoal',y)$(YearVal(y) > 2020) = 0;
 *
 *##### Baseyearproduction & capacity for DE_Nord & DE_Baltic (Werte aus der Excel)
 
-RegionalBaseYearProduction('DE_Nord','RES_Wind_Offshore_Deep','Power','2018') = 55;
 RegionalBaseYearProduction('DE_Nord_1','RES_Wind_Offshore_Deep','Power','2018') = 0;
 RegionalBaseYearProduction('DE_Nord_2','RES_Wind_Offshore_Deep','Power','2018') = 0;
 RegionalBaseYearProduction('DE_Nord_3','RES_Wind_Offshore_Deep','Power','2018') = 0;
@@ -558,12 +571,6 @@ RegionalBaseYearProduction('DE_SH','RES_Wind_Offshore_Transitional','Power','201
 ResidualCapacity('DE_MV','RES_Wind_Offshore_Transitional',y) = 0;
 ResidualCapacity('DE_NI','RES_Wind_Offshore_Transitional',y) = 0;
 ResidualCapacity('DE_SH','RES_Wind_Offshore_Transitional',y) = 0;
-
-ResidualCapacity('DE_Nord','RES_Wind_Offshore_Deep','2018') = 5.3060;
-ResidualCapacity('DE_Nord','RES_Wind_Offshore_Deep','2020') = 6.6980;
-ResidualCapacity('DE_Nord','RES_Wind_Offshore_Deep','2025') = 6.6980;
-ResidualCapacity('DE_Nord','RES_Wind_Offshore_Deep','2030') = 6.2930;
-ResidualCapacity('DE_Nord','RES_Wind_Offshore_Deep','2035') = 4.6538;
 
 ResidualCapacity('DE_Nord_1','RES_Wind_Offshore_Deep','2018') = 0;
 ResidualCapacity('DE_Nord_1','RES_Wind_Offshore_Deep','2020') = 0;
