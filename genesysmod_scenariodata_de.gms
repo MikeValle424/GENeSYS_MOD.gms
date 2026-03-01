@@ -619,7 +619,7 @@ RegionalBaseYearProduction('DE_NI','RES_Wind_Offshore_Transitional','Power','201
 RegionalBaseYearProduction('DE_SH','RES_Wind_Offshore_Transitional','Power','2018') = 0;
 
 
-*### Residual Capaciy der bundeslÃ¤nder auf Null & Neue ResCap fÃ¼r DE_Nord & DE_Baltic 
+*### Residual Capaciy der bundesländer auf Null & Neue ResCap für DE_Nord & DE_Baltic 
 ResidualCapacity('DE_MV','RES_Wind_Offshore_Transitional',y) = 0;
 ResidualCapacity('DE_NI','RES_Wind_Offshore_Transitional',y) = 0;
 ResidualCapacity('DE_SH','RES_Wind_Offshore_Transitional',y) = 0;
@@ -630,35 +630,35 @@ ResidualCapacity('DE_Nord_1','RES_Wind_Offshore_Deep','2025') = 0;
 ResidualCapacity('DE_Nord_1','RES_Wind_Offshore_Deep','2030') = 0;
 ResidualCapacity('DE_Nord_1','RES_Wind_Offshore_Deep','2035') = 0;
 
-ResidualCapacity('DE_Nord_2','RES_Wind_Offshore_Deep','2018') = 0;
-ResidualCapacity('DE_Nord_2','RES_Wind_Offshore_Deep','2020') = 0;
-ResidualCapacity('DE_Nord_2','RES_Wind_Offshore_Deep','2025') = 0;
-ResidualCapacity('DE_Nord_2','RES_Wind_Offshore_Deep','2030') = 0;
-ResidualCapacity('DE_Nord_2','RES_Wind_Offshore_Deep','2035') = 0;
+ResidualCapacity('DE_Nord_2','RES_Wind_Offshore_Deep','2018') = 0.572;
+ResidualCapacity('DE_Nord_2','RES_Wind_Offshore_Deep','2020') = 1.633;
+ResidualCapacity('DE_Nord_2','RES_Wind_Offshore_Deep','2025') = 1.633;
+ResidualCapacity('DE_Nord_2','RES_Wind_Offshore_Deep','2030') = 1.633;
+ResidualCapacity('DE_Nord_2','RES_Wind_Offshore_Deep','2035') = 1.633;
 
-ResidualCapacity('DE_Nord_3','RES_Wind_Offshore_Deep','2018') = 0;
-ResidualCapacity('DE_Nord_3','RES_Wind_Offshore_Deep','2020') = 0;
-ResidualCapacity('DE_Nord_3','RES_Wind_Offshore_Deep','2025') = 0;
-ResidualCapacity('DE_Nord_3','RES_Wind_Offshore_Deep','2030') = 0;
-ResidualCapacity('DE_Nord_3','RES_Wind_Offshore_Deep','2035') = 0;
+ResidualCapacity('DE_Nord_3','RES_Wind_Offshore_Deep','2018') = 0.610;
+ResidualCapacity('DE_Nord_3','RES_Wind_Offshore_Deep','2020') = 0.610;
+ResidualCapacity('DE_Nord_3','RES_Wind_Offshore_Deep','2025') = 0.852;
+ResidualCapacity('DE_Nord_3','RES_Wind_Offshore_Deep','2030') = 0.852;
+ResidualCapacity('DE_Nord_3','RES_Wind_Offshore_Deep','2035') = 0.852;
 
-ResidualCapacity('DE_Nord_4','RES_Wind_Offshore_Deep','2018') = 0;
-ResidualCapacity('DE_Nord_4','RES_Wind_Offshore_Deep','2020') = 0;
-ResidualCapacity('DE_Nord_4','RES_Wind_Offshore_Deep','2025') = 0;
-ResidualCapacity('DE_Nord_4','RES_Wind_Offshore_Deep','2030') = 0;
-ResidualCapacity('DE_Nord_4','RES_Wind_Offshore_Deep','2035') = 0;
+ResidualCapacity('DE_Nord_4','RES_Wind_Offshore_Deep','2018') = 0.366;
+ResidualCapacity('DE_Nord_4','RES_Wind_Offshore_Deep','2020') = 0.366;
+ResidualCapacity('DE_Nord_4','RES_Wind_Offshore_Deep','2025') = 0.708;
+ResidualCapacity('DE_Nord_4','RES_Wind_Offshore_Deep','2030') = 0.708;
+ResidualCapacity('DE_Nord_4','RES_Wind_Offshore_Deep','2035') = 0.708;
 
-ResidualCapacity('DE_Nord_5','RES_Wind_Offshore_Deep','2018') = 0;
-ResidualCapacity('DE_Nord_5','RES_Wind_Offshore_Deep','2020') = 0;
-ResidualCapacity('DE_Nord_5','RES_Wind_Offshore_Deep','2025') = 0;
-ResidualCapacity('DE_Nord_5','RES_Wind_Offshore_Deep','2030') = 0;
-ResidualCapacity('DE_Nord_5','RES_Wind_Offshore_Deep','2035') = 0;
+ResidualCapacity('DE_Nord_5','RES_Wind_Offshore_Deep','2018') = 0.896;
+ResidualCapacity('DE_Nord_5','RES_Wind_Offshore_Deep','2020') = 0.896;
+ResidualCapacity('DE_Nord_5','RES_Wind_Offshore_Deep','2025') = 0.896;
+ResidualCapacity('DE_Nord_5','RES_Wind_Offshore_Deep','2030') = 0.896;
+ResidualCapacity('DE_Nord_5','RES_Wind_Offshore_Deep','2035') = 0.896;
 
-ResidualCapacity('DE_Nord_6','RES_Wind_Offshore_Deep','2018') = 0;
-ResidualCapacity('DE_Nord_6','RES_Wind_Offshore_Deep','2020') = 0;
-ResidualCapacity('DE_Nord_6','RES_Wind_Offshore_Deep','2025') = 0;
-ResidualCapacity('DE_Nord_6','RES_Wind_Offshore_Deep','2030') = 0;
-ResidualCapacity('DE_Nord_6','RES_Wind_Offshore_Deep','2035') = 0;
+ResidualCapacity('DE_Nord_6','RES_Wind_Offshore_Deep','2018') = 0.802;
+ResidualCapacity('DE_Nord_6','RES_Wind_Offshore_Deep','2020') = 0.1054;
+ResidualCapacity('DE_Nord_6','RES_Wind_Offshore_Deep','2025') = 0.1054;
+ResidualCapacity('DE_Nord_6','RES_Wind_Offshore_Deep','2030') = 0.1054;
+ResidualCapacity('DE_Nord_6','RES_Wind_Offshore_Deep','2035') = 0.1054;
 
 ResidualCapacity('DE_Nord_7','RES_Wind_Offshore_Deep','2018') = 0;
 ResidualCapacity('DE_Nord_7','RES_Wind_Offshore_Deep','2020') = 0;
@@ -666,11 +666,11 @@ ResidualCapacity('DE_Nord_7','RES_Wind_Offshore_Deep','2025') = 0;
 ResidualCapacity('DE_Nord_7','RES_Wind_Offshore_Deep','2030') = 0;
 ResidualCapacity('DE_Nord_7','RES_Wind_Offshore_Deep','2035') = 0;
 
-ResidualCapacity('DE_Nord_8','RES_Wind_Offshore_Deep','2018') = 0;
-ResidualCapacity('DE_Nord_8','RES_Wind_Offshore_Deep','2020') = 0;
-ResidualCapacity('DE_Nord_8','RES_Wind_Offshore_Deep','2025') = 0;
-ResidualCapacity('DE_Nord_8','RES_Wind_Offshore_Deep','2030') = 0;
-ResidualCapacity('DE_Nord_8','RES_Wind_Offshore_Deep','2035') = 0;
+ResidualCapacity('DE_Nord_8','RES_Wind_Offshore_Deep','2018') = 0.400;
+ResidualCapacity('DE_Nord_8','RES_Wind_Offshore_Deep','2020') = 0.518;
+ResidualCapacity('DE_Nord_8','RES_Wind_Offshore_Deep','2025') = 0.518;
+ResidualCapacity('DE_Nord_8','RES_Wind_Offshore_Deep','2030') = 0.518;
+ResidualCapacity('DE_Nord_8','RES_Wind_Offshore_Deep','2035') = 0.518;
 
 ResidualCapacity('DE_Nord_9','RES_Wind_Offshore_Deep','2018') = 0;
 ResidualCapacity('DE_Nord_9','RES_Wind_Offshore_Deep','2020') = 0;
@@ -719,6 +719,7 @@ ResidualCapacity('DE_Nord_17','RES_Wind_Offshore_Deep','2020') = 0;
 ResidualCapacity('DE_Nord_17','RES_Wind_Offshore_Deep','2025') = 0;
 ResidualCapacity('DE_Nord_17','RES_Wind_Offshore_Deep','2030') = 0;
 ResidualCapacity('DE_Nord_17','RES_Wind_Offshore_Deep','2035') = 0;
+
 ResidualCapacity('DE_Nord_19','RES_Wind_Offshore_Deep','2018') = 0;
 ResidualCapacity('DE_Nord_19','RES_Wind_Offshore_Deep','2020') = 0;
 ResidualCapacity('DE_Nord_19','RES_Wind_Offshore_Deep','2025') = 0;
@@ -730,29 +731,29 @@ ResidualCapacity('DE_Nord_20','RES_Wind_Offshore_Deep','2025') = 0;
 ResidualCapacity('DE_Nord_20','RES_Wind_Offshore_Deep','2030') = 0;
 ResidualCapacity('DE_Nord_20','RES_Wind_Offshore_Deep','2035') = 0;
 
-ResidualCapacity('DE_Baltic_1','RES_Wind_Offshore_Deep','2018') = 0;
-ResidualCapacity('DE_Baltic_1','RES_Wind_Offshore_Deep','2020') = 0;
-ResidualCapacity('DE_Baltic_1','RES_Wind_Offshore_Deep','2025') = 0;
-ResidualCapacity('DE_Baltic_1','RES_Wind_Offshore_Deep','2030') = 0;
-ResidualCapacity('DE_Baltic_1','RES_Wind_Offshore_Deep','2035') = 0;
+ResidualCapacity('DE_Baltic_1','RES_Wind_Offshore_Deep','2018') = 0.350;
+ResidualCapacity('DE_Baltic_1','RES_Wind_Offshore_Deep','2020') = 0.735;
+ResidualCapacity('DE_Baltic_1','RES_Wind_Offshore_Deep','2025') = 0.735;
+ResidualCapacity('DE_Baltic_1','RES_Wind_Offshore_Deep','2030') = 0.735;
+ResidualCapacity('DE_Baltic_1','RES_Wind_Offshore_Deep','2035') = 0.735;
 
 ResidualCapacity('DE_Baltic_2','RES_Wind_Offshore_Deep','2018') = 0;
 ResidualCapacity('DE_Baltic_2','RES_Wind_Offshore_Deep','2020') = 0;
-ResidualCapacity('DE_Baltic_2','RES_Wind_Offshore_Deep','2025') = 0;
-ResidualCapacity('DE_Baltic_2','RES_Wind_Offshore_Deep','2030') = 0;
-ResidualCapacity('DE_Baltic_2','RES_Wind_Offshore_Deep','2035') = 0;
+ResidualCapacity('DE_Baltic_2','RES_Wind_Offshore_Deep','2025') = 0.476;
+ResidualCapacity('DE_Baltic_2','RES_Wind_Offshore_Deep','2030') = 0.476;
+ResidualCapacity('DE_Baltic_2','RES_Wind_Offshore_Deep','2035') = 0.476;
 
-ResidualCapacity('DE_Baltic_3','RES_Wind_Offshore_Deep','2018') = 0;
-ResidualCapacity('DE_Baltic_3','RES_Wind_Offshore_Deep','2020') = 0;
-ResidualCapacity('DE_Baltic_3','RES_Wind_Offshore_Deep','2025') = 0;
-ResidualCapacity('DE_Baltic_3','RES_Wind_Offshore_Deep','2030') = 0;
-ResidualCapacity('DE_Baltic_3','RES_Wind_Offshore_Deep','2035') = 0;
+ResidualCapacity('DE_Baltic_3','RES_Wind_Offshore_Deep','2018') = 0.288;
+ResidualCapacity('DE_Baltic_3','RES_Wind_Offshore_Deep','2020') = 0.288;
+ResidualCapacity('DE_Baltic_3','RES_Wind_Offshore_Deep','2025') = 0.288;
+ResidualCapacity('DE_Baltic_3','RES_Wind_Offshore_Deep','2030') = 0.288;
+ResidualCapacity('DE_Baltic_3','RES_Wind_Offshore_Deep','2035') = 0.288;
 
 ResidualCapacity('DE_Baltic_4','RES_Wind_Offshore_Deep','2018') = 0;
 ResidualCapacity('DE_Baltic_4','RES_Wind_Offshore_Deep','2020') = 0;
-ResidualCapacity('DE_Baltic_4','RES_Wind_Offshore_Deep','2025') = 0;
-ResidualCapacity('DE_Baltic_4','RES_Wind_Offshore_Deep','2030') = 0;
-ResidualCapacity('DE_Baltic_4','RES_Wind_Offshore_Deep','2035') = 0;
+ResidualCapacity('DE_Baltic_4','RES_Wind_Offshore_Deep','2025') = 0.257;
+ResidualCapacity('DE_Baltic_4','RES_Wind_Offshore_Deep','2030') = 0.257;
+ResidualCapacity('DE_Baltic_4','RES_Wind_Offshore_Deep','2035') = 0.257;
 
 ResidualCapacity('DE_Baltic_5','RES_Wind_Offshore_Deep','2018') = 0;
 ResidualCapacity('DE_Baltic_5','RES_Wind_Offshore_Deep','2020') = 0;
@@ -760,11 +761,11 @@ ResidualCapacity('DE_Baltic_5','RES_Wind_Offshore_Deep','2025') = 0;
 ResidualCapacity('DE_Baltic_5','RES_Wind_Offshore_Deep','2030') = 0;
 ResidualCapacity('DE_Baltic_5','RES_Wind_Offshore_Deep','2035') = 0;
 
-ResidualCapacity('DE_Baltic_6','RES_Wind_Offshore_Deep','2018') = 0;
-ResidualCapacity('DE_Baltic_6','RES_Wind_Offshore_Deep','2020') = 0;
-ResidualCapacity('DE_Baltic_6','RES_Wind_Offshore_Deep','2025') = 0;
-ResidualCapacity('DE_Baltic_6','RES_Wind_Offshore_Deep','2030') = 0;
-ResidualCapacity('DE_Baltic_6','RES_Wind_Offshore_Deep','2035') = 0;
+ResidualCapacity('DE_Baltic_6','RES_Wind_Offshore_Deep','2018') = 0.048;
+ResidualCapacity('DE_Baltic_6','RES_Wind_Offshore_Deep','2020') = 0.048;
+ResidualCapacity('DE_Baltic_6','RES_Wind_Offshore_Deep','2025') = 0.048;
+ResidualCapacity('DE_Baltic_6','RES_Wind_Offshore_Deep','2030') = 0.048;
+ResidualCapacity('DE_Baltic_6','RES_Wind_Offshore_Deep','2035') = 0.048;
 *
 *
 parameter Renovierungsrate;
