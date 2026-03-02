@@ -174,12 +174,12 @@ AvailabilityFactor('DE_Baltic_5',t,y) = 0;
 AvailabilityFactor('DE_Baltic_6',t,y) = 0;
 
 
-AvailabilityFactor('DE_Baltic_1','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Baltic_2','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Baltic_3','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Baltic_4','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Baltic_5','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Baltic_6','RES_Wind_Offshore_Deep',y) = 1;
+AvailabilityFactor('DE_Baltic_1','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Baltic_2','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Baltic_3','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Baltic_4','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Baltic_5','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Baltic_6','RES_Wind_Offshore_Shallow',y) = 1;
 
 AvailabilityFactor('DE_Baltic_1','D_Battery_Li-Ion',y) = 1;
 AvailabilityFactor('DE_Baltic_2','D_Battery_Li-Ion',y) = 1;
@@ -187,24 +187,24 @@ AvailabilityFactor('DE_Baltic_3','D_Battery_Li-Ion',y) = 1;
 AvailabilityFactor('DE_Baltic_4','D_Battery_Li-Ion',y) = 1;
 AvailabilityFactor('DE_Baltic_5','D_Battery_Li-Ion',y) = 1;
 AvailabilityFactor('DE_Baltic_6','D_Battery_Li-Ion',y) = 1;
-AvailabilityFactor('DE_Nord_1','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Nord_2','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Nord_3','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Nord_4','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Nord_5','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Nord_6','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Nord_7','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Nord_8','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Nord_9','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Nord_10','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Nord_11','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Nord_12','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Nord_13','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Nord_14','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Nord_16','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Nord_17','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Nord_19','RES_Wind_Offshore_Deep',y) = 1;
-AvailabilityFactor('DE_Nord_20','RES_Wind_Offshore_Deep',y) = 1;
+AvailabilityFactor('DE_Nord_1','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Nord_2','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Nord_3','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Nord_4','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Nord_5','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Nord_6','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Nord_7','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Nord_8','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Nord_9','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Nord_10','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Nord_11','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Nord_12','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Nord_13','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Nord_14','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Nord_16','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Nord_17','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Nord_19','RES_Wind_Offshore_Shallow',y) = 1;
+AvailabilityFactor('DE_Nord_20','RES_Wind_Offshore_Shallow',y) = 1;
 
 AvailabilityFactor('DE_Nord_1','D_Battery_Li-Ion',y) = 1;
 AvailabilityFactor('DE_Nord_2','D_Battery_Li-Ion',y) = 1;
@@ -466,7 +466,7 @@ HeatREProduction(y,r)$(YearVal(y)>2025)..sum(f$(TagFuelToSubsets(f,'HeatFuels'))
 $endif
 
 $ifthen %switch_FEP% == 1
-*###### FlÃ¤chentwicklungsplan implementation #######
+*###### Flächentwicklungsplan implementation #######
 set offshore_nordic(r_full);
 offshore_nordic(r_full) = no;
 offshore_nordic('DE_Nord_1') = yes;
@@ -725,6 +725,7 @@ ResidualCapacity('DE_Nord_19','RES_Wind_Offshore_Deep','2020') = 0;
 ResidualCapacity('DE_Nord_19','RES_Wind_Offshore_Deep','2025') = 0;
 ResidualCapacity('DE_Nord_19','RES_Wind_Offshore_Deep','2030') = 0;
 ResidualCapacity('DE_Nord_19','RES_Wind_Offshore_Deep','2035') = 0;
+
 ResidualCapacity('DE_Nord_20','RES_Wind_Offshore_Deep','2018') = 0;
 ResidualCapacity('DE_Nord_20','RES_Wind_Offshore_Deep','2020') = 0;
 ResidualCapacity('DE_Nord_20','RES_Wind_Offshore_Deep','2025') = 0;
