@@ -9,3 +9,12 @@
 *.gdx
 *~*
 225*
+
+# Ignore model outputs
+Results/
+
+# Ignore Cursor workspace metadata
+.cursor/
+
+# Ignore local notes
+GAMS_BEFEHLE.md
