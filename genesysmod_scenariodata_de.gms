@@ -223,42 +223,6 @@ TagTechnologyToTechGroup('HLI_Solar_Thermal','solar')=0;
 
 
 $ifthen %switch_FEP% == 0
-set offshore_nordic(r_full);
-offshore_nordic(r_full) = no;
-offshore_nordic('DE_Nord_1') = yes;
-offshore_nordic('DE_Nord_2') = yes;
-offshore_nordic('DE_Nord_3') = yes;
-offshore_nordic('DE_Nord_4') = yes;
-offshore_nordic('DE_Nord_5') = yes;
-offshore_nordic('DE_Nord_6') = yes;
-offshore_nordic('DE_Nord_7') = yes;
-offshore_nordic('DE_Nord_8') = yes;
-offshore_nordic('DE_Nord_9') = yes;
-offshore_nordic('DE_Nord_10') = yes;
-offshore_nordic('DE_Nord_11') = yes;
-offshore_nordic('DE_Nord_12') = yes;
-offshore_nordic('DE_Nord_13') = yes;
-offshore_nordic('DE_Nord_14') = yes;
-offshore_nordic('DE_Nord_16') = yes;
-offshore_nordic('DE_Nord_17') = yes;
-offshore_nordic('DE_Nord_19') = yes;
-offshore_nordic('DE_Nord_20') = yes;
-offshore_nordic('DE_NI') = yes;
-offshore_nordic('DE_SH') = yes;
-
-
-
-set offshore_baltic(r_full);
-offshore_baltic(r_full) = no;
-offshore_baltic('DE_Baltic_1') = yes;
-offshore_baltic('DE_Baltic_2') = yes;
-offshore_baltic('DE_Baltic_3') = yes;
-offshore_baltic('DE_Baltic_4') = yes;
-offshore_baltic('DE_Baltic_5') = yes;
-offshore_baltic('DE_Baltic_6') = yes;
-offshore_baltic('DE_MV') = yes;
-offshore_baltic('DE_SH') = yes;
-
 
 set offshore (t);
 offshore(t)= no;
@@ -313,6 +277,42 @@ $endif
 
 $ifthen %switch_FEP% == 1
 *###### Flächentwicklungsplan implementation #######
+set offshore_nordic(r_full);
+offshore_nordic(r_full) = no;
+offshore_nordic('DE_Nord_1') = yes;
+offshore_nordic('DE_Nord_2') = yes;
+offshore_nordic('DE_Nord_3') = yes;
+offshore_nordic('DE_Nord_4') = yes;
+offshore_nordic('DE_Nord_5') = yes;
+offshore_nordic('DE_Nord_6') = yes;
+offshore_nordic('DE_Nord_7') = yes;
+offshore_nordic('DE_Nord_8') = yes;
+offshore_nordic('DE_Nord_9') = yes;
+offshore_nordic('DE_Nord_10') = yes;
+offshore_nordic('DE_Nord_11') = yes;
+offshore_nordic('DE_Nord_12') = yes;
+offshore_nordic('DE_Nord_13') = yes;
+offshore_nordic('DE_Nord_14') = yes;
+offshore_nordic('DE_Nord_16') = yes;
+offshore_nordic('DE_Nord_17') = yes;
+offshore_nordic('DE_Nord_19') = yes;
+offshore_nordic('DE_Nord_20') = yes;
+offshore_nordic('DE_NI') = yes;
+offshore_nordic('DE_SH') = yes;
+
+
+
+set offshore_baltic(r_full);
+offshore_baltic(r_full) = no;
+offshore_baltic('DE_Baltic_1') = yes;
+offshore_baltic('DE_Baltic_2') = yes;
+offshore_baltic('DE_Baltic_3') = yes;
+offshore_baltic('DE_Baltic_4') = yes;
+offshore_baltic('DE_Baltic_5') = yes;
+offshore_baltic('DE_Baltic_6') = yes;
+offshore_baltic('DE_MV') = yes;
+offshore_baltic('DE_SH') = yes;
+
 
 equation TotalCapOffshoreNord2025(YEAR_FULL,TECHNOLOGY,REGION_FULL);
 TotalCapOffshoreNord2025(y,t,r)..sum((offshore,offshore_nordic), TotalCapacityAnnual('2025',Offshore,offshore_nordic)) =e= 9.4;
