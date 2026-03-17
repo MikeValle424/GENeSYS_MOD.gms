@@ -19,32 +19,9 @@
 **_______________________________________SENSITIVITIES__________________________________________*
 *NewTradeCapacity.fx(y,'Power', 'DE_Nord','DE_NI')$(YearVal(y) > 2018) = 0.11;
 
-*define Sets for offshore-regions
-set offshore_nordic(r_full);
-offshore_nordic(r_full) = no;
-offshore_nordic('DE_Nord_1') = yes;
-offshore_nordic('DE_Nord_2') = yes;
-offshore_nordic('DE_Nord_3') = yes;
-offshore_nordic('DE_Nord_4') = yes;
-offshore_nordic('DE_Nord_5') = yes;
-offshore_nordic('DE_Nord_6') = yes;
-offshore_nordic('DE_Nord_7') = yes;
-offshore_nordic('DE_Nord_8') = yes;
-offshore_nordic('DE_Nord_9') = yes;
-offshore_nordic('DE_Nord_10') = yes;
-offshore_nordic('DE_Nord_11') = yes;
-offshore_nordic('DE_Nord_12') = yes;
-offshore_nordic('DE_Nord_13') = yes;
-offshore_nordic('DE_Nord_14') = yes;
-offshore_nordic('DE_Nord_16') = yes;
-offshore_nordic('DE_Nord_17') = yes;
-offshore_nordic('DE_Nord_19') = yes;
-offshore_nordic('DE_Nord_20') = yes;
-offshore_nordic('DE_NI') = yes;
-offshore_nordic('DE_SH') = yes;
-
+* define Sets for offshore-regions
 * Set of sea-based offshore hubs (excluded from symmetric transmission constraint in TrC6)
-* DE_Nord_1..19 and DE_Baltic: only export to land, no symmetric capacity required
+* DE_Nord_1..20 and DE_Baltic: only export to land, no symmetric capacity required
 set offshore_hub_sea(r_full);
 offshore_hub_sea(r_full) = no;
 offshore_hub_sea('DE_Nord_1') = yes;
@@ -71,24 +48,6 @@ offshore_hub_sea('DE_Baltic_3') = yes;
 offshore_hub_sea('DE_Baltic_4') = yes;
 offshore_hub_sea('DE_Baltic_5') = yes;
 offshore_hub_sea('DE_Baltic_6') = yes;
-
-set offshore_baltic(r_full);
-offshore_baltic(r_full) = no;
-offshore_baltic('DE_Baltic_1') = yes;
-offshore_baltic('DE_Baltic_2') = yes;
-offshore_baltic('DE_Baltic_3') = yes;
-offshore_baltic('DE_Baltic_4') = yes;
-offshore_baltic('DE_Baltic_5') = yes;
-offshore_baltic('DE_Baltic_6') = yes;
-offshore_baltic('DE_MV') = yes;
-offshore_baltic('DE_SH') = yes;
-
-
-set offshore (t);
-offshore(t)= no;
-offshore('RES_Wind_Offshore_Deep') = yes;
-offshore('RES_Wind_Offshore_Shallow') = yes;
-offshore('RES_Wind_Offshore_Transitional') = yes;
 
 parameter TagTradeMonoDirectional(REGION_FULL);
 TagTradeMonoDirectional(r) = 0;
@@ -264,6 +223,49 @@ TagTechnologyToTechGroup('HLI_Solar_Thermal','solar')=0;
 
 
 $ifthen %switch_FEP% == 0
+set offshore_nordic(r_full);
+offshore_nordic(r_full) = no;
+offshore_nordic('DE_Nord_1') = yes;
+offshore_nordic('DE_Nord_2') = yes;
+offshore_nordic('DE_Nord_3') = yes;
+offshore_nordic('DE_Nord_4') = yes;
+offshore_nordic('DE_Nord_5') = yes;
+offshore_nordic('DE_Nord_6') = yes;
+offshore_nordic('DE_Nord_7') = yes;
+offshore_nordic('DE_Nord_8') = yes;
+offshore_nordic('DE_Nord_9') = yes;
+offshore_nordic('DE_Nord_10') = yes;
+offshore_nordic('DE_Nord_11') = yes;
+offshore_nordic('DE_Nord_12') = yes;
+offshore_nordic('DE_Nord_13') = yes;
+offshore_nordic('DE_Nord_14') = yes;
+offshore_nordic('DE_Nord_16') = yes;
+offshore_nordic('DE_Nord_17') = yes;
+offshore_nordic('DE_Nord_19') = yes;
+offshore_nordic('DE_Nord_20') = yes;
+offshore_nordic('DE_NI') = yes;
+offshore_nordic('DE_SH') = yes;
+
+
+
+set offshore_baltic(r_full);
+offshore_baltic(r_full) = no;
+offshore_baltic('DE_Baltic_1') = yes;
+offshore_baltic('DE_Baltic_2') = yes;
+offshore_baltic('DE_Baltic_3') = yes;
+offshore_baltic('DE_Baltic_4') = yes;
+offshore_baltic('DE_Baltic_5') = yes;
+offshore_baltic('DE_Baltic_6') = yes;
+offshore_baltic('DE_MV') = yes;
+offshore_baltic('DE_SH') = yes;
+
+
+set offshore (t);
+offshore(t)= no;
+offshore('RES_Wind_Offshore_Deep') = yes;
+offshore('RES_Wind_Offshore_Shallow') = yes;
+offshore('RES_Wind_Offshore_Transitional') = yes;
+
 equations Add_Osterpaket(y_full,t_group);
 Add_Osterpaket(y,t_group).. sum((t,r)$(TagTechnologyToTechGroup(t,t_group)),TotalCapacityAnnual(y,t,r)) =g= OsterpaketCapacity(y,t_group);
 
