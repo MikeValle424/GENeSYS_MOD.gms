@@ -46,6 +46,13 @@ TagTradeMonoDirectional('DE_Baltic_4') = 1;
 TagTradeMonoDirectional('DE_Baltic_5') = 1;
 TagTradeMonoDirectional('DE_Baltic_6') = 1;
 
+* Uniform trade capacity expansion costs for offshore hubs (override after Excel load)
+TradeCapacityGrowthCosts(offshore_hub_sea,'Power',rr) = 2.1425;
+TradeCapacityGrowthCosts(r,'Power',offshore_hub_sea) = 2.1425;
+
+TradeCapacityGrowthCosts(offshore_hub_sea,'H2',rr) = 0.0053;
+TradeCapacityGrowthCosts(r,'Power',offshore_hub_sea) = 0.0053;
+
 Import.fx(y,l,f,'DE_Nord_1',rr) = 0;
 Import.fx(y,l,f,'DE_Nord_2',rr) = 0;
 Import.fx(y,l,f,'DE_Nord_3',rr) = 0;
