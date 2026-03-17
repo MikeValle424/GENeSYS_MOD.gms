@@ -49,6 +49,12 @@ offshore_hub_sea('DE_Baltic_4') = yes;
 offshore_hub_sea('DE_Baltic_5') = yes;
 offshore_hub_sea('DE_Baltic_6') = yes;
 
+set offshore_wind(t);
+offshore_wind(t) = no;
+offshore_wind('RES_Wind_Offshore_Shallow') = yes;
+offshore_wind('RES_Wind_Offshore_Transitional') = yes;
+offshore_wind('RES_Wind_Offshore_Deep') = yes;
+
 parameter TagTradeMonoDirectional(REGION_FULL);
 TagTradeMonoDirectional(r) = 0;
 TagTradeMonoDirectional(r)$offshore_hub_sea(r) = 1;
@@ -177,6 +183,16 @@ TotalAnnualMaxCapacity('DE_NI','RES_Wind_Offshore_Deep',y)$(yearVal(y) >= 2015) 
 TotalAnnualMaxCapacity('DE_NI','RES_Wind_Offshore_Shallow',y)$(yearVal(y) >= 2015) = 4.2530;
 TotalAnnualMaxCapacity('DE_MV','RES_Wind_Offshore_Deep',y)$(yearVal(y) >= 2015) = 0;
 TotalAnnualMaxCapacity('DE_MV','RES_Wind_Offshore_Shallow',y)$(yearVal(y) >= 2015) = 1.0675;
+
+* --- Sensitivity knob: scale offshore-wind TotalAnnualMaxCapacity in offshore hub sea regions ---
+* Usage: gams genesysmod.gms --offwind_maxcap_mult=1.2
+$if not set offwind_maxcap_mult $setglobal offwind_maxcap_mult 1.0
+scalar offwind_maxcap_mult /%offwind_maxcap_mult%/;
+
+* apply multiplier after any scenario-specific overrides above
+TotalAnnualMaxCapacity(r_full,t,y)$(
+  offshore_hub_sea(r_full) and offshore_wind(t) and TotalAnnualMaxCapacity(r_full,t,y)
+) = TotalAnnualMaxCapacity(r_full,t,y) * offwind_maxcap_mult;
 
 
 GrowthRateTradeCapacity(r,'Gas_Natural',y,rr) = 0.1;
