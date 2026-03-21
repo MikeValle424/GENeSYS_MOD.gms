@@ -49,6 +49,16 @@ offshore_hub_sea('DE_Baltic_4') = yes;
 offshore_hub_sea('DE_Baltic_5') = yes;
 offshore_hub_sea('DE_Baltic_6') = yes;
 
+* Sensitivity multipliers in offshore hub regions:
+* - CapitalCost for RES_Wind_Offshore_Deep and X_Alkaline_Electrolysis
+* - CapitalCostStorage for storage linked to D_Battery_Li-Ion
+CapitalCost(r,'RES_Wind_Offshore_Deep',y)$offshore_hub_sea(r) =
+    CapitalCost(r,'RES_Wind_Offshore_Deep',y) * %offshore_deep_capitalcost_multiplier%;
+CapitalCost(r,'X_Alkaline_Electrolysis',y)$offshore_hub_sea(r) =
+    CapitalCost(r,'X_Alkaline_Electrolysis',y) * %X_Alkaline_Electrolysis_multiplier%;
+CapitalCostStorage(r,s,y)$(offshore_hub_sea(r) and sum(m, TechnologyToStorage('D_Battery_Li-Ion',s,m,y)) > 0) =
+    CapitalCostStorage(r,s,y) * %offshore_deep_storage_capitalcost_multiplier%;
+
 parameter TagTradeMonoDirectional(REGION_FULL);
 TagTradeMonoDirectional(r) = 0;
 TagTradeMonoDirectional(r)$offshore_hub_sea(r) = 1;
