@@ -82,8 +82,8 @@ $if not set set_peaking_startyear        $setglobal set_peaking_startyear 2025
 $if not set set_peaking_minrun_share     $setglobal set_peaking_minrun_share 0.15
 
 $if not set offshore_deep_capitalcost_multiplier $setglobal offshore_deep_capitalcost_multiplier 1
-$if not set offshore_deep_capitalcost_multiplier $setglobal X_Alkaline_Electrolysis_multiplier 1
-$if not set offshore_deep_storage_capitalcost_multiplier $setglobal offshore_deep_storage_capitalcost_multiplier 1
+$if not set X_Alkaline_Electrolysis_multiplier $setglobal X_Alkaline_Electrolysis_multiplier 1
+$if not set storage_capitalcost_multiplier $setglobal storage_capitalcost_multiplier 1
 
 $if not set model_region                 $setglobal model_region de
 $if not set eployment_data_file          $setglobal employment_data_file Employment_v01_06_11_2019

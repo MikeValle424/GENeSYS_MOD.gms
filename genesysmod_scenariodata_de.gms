@@ -57,7 +57,7 @@ CapitalCost(r,'RES_Wind_Offshore_Deep',y)$offshore_hub_sea(r) =
 CapitalCost(r,'X_Alkaline_Electrolysis',y)$offshore_hub_sea(r) =
     CapitalCost(r,'X_Alkaline_Electrolysis',y) * %X_Alkaline_Electrolysis_multiplier%;
 CapitalCostStorage(r,s,y)$(offshore_hub_sea(r) and sum(m, TechnologyToStorage('D_Battery_Li-Ion',s,m,y)) > 0) =
-    CapitalCostStorage(r,s,y) * %offshore_deep_storage_capitalcost_multiplier%;
+    CapitalCostStorage(r,s,y) * %storage_capitalcost_multiplier%;
 
 parameter TagTradeMonoDirectional(REGION_FULL);
 TagTradeMonoDirectional(r) = 0;
