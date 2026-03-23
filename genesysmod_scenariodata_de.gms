@@ -59,15 +59,23 @@ CapitalCost(r,'X_Alkaline_Electrolysis',y)$offshore_hub_sea(r) =
 CapitalCostStorage(r,s,y)$(offshore_hub_sea(r) and sum(m, TechnologyToStorage('D_Battery_Li-Ion',s,m,y)) > 0) =
     CapitalCostStorage(r,s,y) * %storage_capitalcost_multiplier%;
 
+
 parameter TagTradeMonoDirectional(REGION_FULL);
 TagTradeMonoDirectional(r) = 0;
 TagTradeMonoDirectional(r)$offshore_hub_sea(r) = 1;
 
-TradeCapacityGrowthCosts(r,'Power',rr)$offshore_hub_sea(r) = 2.1425;
-TradeCapacityGrowthCosts(r,'Power',rr)$offshore_hub_sea(rr) = 2.1425;
+* Sensitivity multipliers in offshore hub regions:
+* -TradeCapacityGrowthCosts for Power (both directions)
+* -TradeCapacityGrowthCosts for H2 (both directions)
+TradeCapacityGrowthCosts(r,'Power',rr)$offshore_hub_sea(r) =
+    TradeCapacityGrowthCosts(r,'Power',rr) * %trade_capacity_growth_cost_multiplier%;
+TradeCapacityGrowthCosts(r,'Power',rr)$offshore_hub_sea(rr) =
+    TradeCapacityGrowthCosts(r,'Power',rr) * %trade_capacity_growth_cost_multiplier%;
 
-TradeCapacityGrowthCosts(r,'H2',rr)$offshore_hub_sea(r) = 0.0053;
-TradeCapacityGrowthCosts(r,'H2',rr)$offshore_hub_sea(rr) = 0.0053;
+TradeCapacityGrowthCosts(r,'H2',rr)$offshore_hub_sea(r) =
+    TradeCapacityGrowthCosts(r,'H2',rr) * %trade_capacity_growth_cost_multiplier%;
+TradeCapacityGrowthCosts(r,'H2',rr)$offshore_hub_sea(rr) =
+    TradeCapacityGrowthCosts(r,'H2',rr) * %trade_capacity_growth_cost_multiplier%;
 
 Import.fx(y,l,f,r,rr)$offshore_hub_sea(r) = 0;
 
