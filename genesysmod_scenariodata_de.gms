@@ -49,6 +49,12 @@ offshore_hub_sea('DE_Baltic_4') = yes;
 offshore_hub_sea('DE_Baltic_5') = yes;
 offshore_hub_sea('DE_Baltic_6') = yes;
 
+TradeCapacityGrowthCosts(r,'Power',rr)$offshore_hub_sea(r) = 2.1425;
+TradeCapacityGrowthCosts(r,'Power',rr)$offshore_hub_sea(rr) = 2.1425;
+
+TradeCapacityGrowthCosts(r,'H2',rr)$offshore_hub_sea(r) = 0.0053;
+TradeCapacityGrowthCosts(r,'H2',rr)$offshore_hub_sea(rr) = 0.0053;
+
 * Sensitivity multipliers in offshore hub regions:
 * - CapitalCost for RES_Wind_Offshore_Deep and X_Alkaline_Electrolysis
 * - CapitalCostStorage for storage linked to D_Battery_Li-Ion
