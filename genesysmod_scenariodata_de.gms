@@ -223,13 +223,6 @@ TagTechnologyToTechGroup('HLI_Solar_Thermal','solar')=0;
 
 
 $ifthen %switch_FEP% == 0
-
-set offshore (t);
-offshore(t)= no;
-offshore('RES_Wind_Offshore_Deep') = yes;
-offshore('RES_Wind_Offshore_Shallow') = yes;
-offshore('RES_Wind_Offshore_Transitional') = yes;
-
 equations Add_Osterpaket(y_full,t_group);
 Add_Osterpaket(y,t_group).. sum((t,r)$(TagTechnologyToTechGroup(t,t_group)),TotalCapacityAnnual(y,t,r)) =g= OsterpaketCapacity(y,t_group);
 
@@ -300,8 +293,6 @@ offshore_nordic('DE_Nord_20') = yes;
 offshore_nordic('DE_NI') = yes;
 offshore_nordic('DE_SH') = yes;
 
-
-
 set offshore_baltic(r_full);
 offshore_baltic(r_full) = no;
 offshore_baltic('DE_Baltic_1') = yes;
@@ -313,6 +304,11 @@ offshore_baltic('DE_Baltic_6') = yes;
 offshore_baltic('DE_MV') = yes;
 offshore_baltic('DE_SH') = yes;
 
+set offshore (t);
+offshore(t)= no;
+offshore('RES_Wind_Offshore_Deep') = yes;
+offshore('RES_Wind_Offshore_Shallow') = yes;
+offshore('RES_Wind_Offshore_Transitional') = yes;
 
 equation TotalCapOffshoreNord2025(YEAR_FULL,TECHNOLOGY,REGION_FULL);
 TotalCapOffshoreNord2025(y,t,r)..sum((offshore,offshore_nordic), TotalCapacityAnnual('2025',Offshore,offshore_nordic)) =e= 9.4;
